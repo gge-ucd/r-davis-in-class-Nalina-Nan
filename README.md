@@ -1,5 +1,9 @@
 # Week 3 Assignment
 
+Nalina Aiempichitkijkarn
+
+I am studying social behavior in macaques.
+
 Hey folks! For this week, we're going to have you create a new GitHub repository/R Project that we'll be using for our in-class notes and work. This will mean we'll all be working on the same basic project structure, plus you'll be able to see each other's code on GitHub.
 
 We'd like you to do the following things:
@@ -13,5 +17,5 @@ We'd like you to do the following things:
 
 As always, let us know if you have any questions!
 
-[]Completed by student
+[X]Completed by student
 []Checked by instructor
