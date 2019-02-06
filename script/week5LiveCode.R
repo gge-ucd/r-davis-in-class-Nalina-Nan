@@ -156,3 +156,5 @@ surveys_gw %>%
 surveys_gather <- surveys_spread %>% 
   gather(key=genus, value = mean_weight,-plot_id)
   #NA is backkkk, 0 didn't hold
+
+#assignment with munozbird
