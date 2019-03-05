@@ -26,7 +26,7 @@ species_keep <- c("DM","DO")
 surveys_complete %>% 
   filter(surveys_complete$species_id %in% species_keep)
 
-#writing your dataframe to .scv
+#writing your dataframe to .csv
 
 write_csv(surveys_complete,path = "data_output/surveysComplete.csv")
 
@@ -63,7 +63,7 @@ survey_plot +
 
 #challenge
 
-install.packages("hexbin")
+#install.packages("hexbin")
 library(hexbin)
 survey_plot + 
   geom_hex()
@@ -178,3 +178,5 @@ ggsave("figures/my_test_facet_plot.jpeg",height = 8, width = 8) #recognize the t
 #source ("")#run the whole script into my env.
 
 #brcurrinder
+
+
