@@ -21,18 +21,15 @@ View(am_riv)
 
 #Calculate the weekly mean, max, and min water temperatures and plot as a point plot (all on the same graph)
 
-#not sure how tp calculate weekly
 #print(difftime(max(am_riv$Date),min(am_riv$Date),units = "week"))
 #Week <- function(a=min(am_riv$Date),b=max(am_riv$Date)) { 
 #Week=seq(min(am_riv$Date),to=max(am_riv$Date),  by="week")
 #return()
-}
 
 am_riv1<-am_riv %>% 
   mutate(which_week = week(dateTime),label=TRUE) %>% 
   group_by(which_week) %>% 
-  summarize(mean_water = mean (Level),min_water = min (Level),max_water = max(Level))
-
+  summarize(mean_water = mean (Temperature),min_water = min (Temperature),max_water = max(Temperature))
 #problem: the first week of data collection is not week 1
 
 am_riv1 %>% 
@@ -40,8 +37,7 @@ am_riv1 %>%
   geom_point(aes(x=which_week,y=mean_water,col='green'),alpha=0.8)+
   geom_point(aes(x=which_week,y=min_water,col='orange'),alpha=0.8)+
   geom_point(aes(x=which_week,y=max_water,col='blue'),alpha=0.8)+
-  labs(title="water temperature in a year", x="week of the year", y="water temperature")+
-
+  labs(title="water temperature in a year", x="week of the year", y="water temperature")
   #should add legend label but dont know how
 
 
