@@ -80,4 +80,6 @@ plot_temp<- function(monthToPlot, dat=mloa2){
 #test
 plot_temp(3)
 
+getwd()
 
+storms

@@ -1,0 +1,50 @@
+---
+title: "week9_assignment_NalinaAiem.Rmd"
+author: "Nalina"
+date: "3/11/2019"
+output: html_document
+---
+
+I am a first year Ph.D. student in Animal Behavior Graduate Group. My reseach questions will play around **how human activity affects social behavior in long-tailed macaques** (*Macaca fascicularis*).
+
+I can't insert pics
+
+Use the storms data (included in RStudio) to create a plotly graph of the relationship between wind and pressure, where the status of the storm is indicated by a color.
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(plotly)
+ggplotly(
+ggplot(data=storms)+
+  geom_jitter(aes(x=wind,y=pressure, col = as.character(status)), pch=21, alpha=.05)+
+  scale_fill_viridis_c()+
+  theme_bw()
+)
+```
+
+Create a table that identifies the mean wind, pressure, ts_diameter, hu_diameter of each status of storm (remember to remove NAs!). Use the package htmlTable. Round each mean to only two decimal places (Hint
+look up the function round)
+
+```{r}
+library(knitr)
+storm1<-storms %>% 
+  drop_na() %>% 
+  group_by(status) %>% 
+  summarise(mwind=round(mean(wind),2), mpressure=round(mean(pressure),2), mts_diameter=round(mean(ts_diameter),2), mhu_diameter=round(mean(hu_diameter),2))
+
+  htmlTable::htmlTable(storm1)
+```
+
+CHALLENGE Find the duration, in number of days, of every hurricane from 2010 and later, and then use one of the map functions from purrr to write a sentence saying “Hurricane X lasted Y days” for each of these storms. You can look for some help with these functions here and here.
+
+I can't figure out by myself... have to look for the answer
+```{r}
+hurr_len <- storms %>% 
+  filter(status == "hurricane", year >= 2010) %>% 
+  group_by(name, year) %>% 
+  summarise(num_days = diff(range(day)))
+
+map2_chr(hurr_len$name,hurr_len$num_days, function (x,y) paste("Herricane" ,x,"lasts",y,"days"))
+```
+

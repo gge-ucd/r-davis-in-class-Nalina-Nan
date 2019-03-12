@@ -44,6 +44,7 @@ am_riv3 <- am_riv %>%
   group_by(hourly, month, datetime) %>% 
   summarize(mean_level = mean(Level))
 
+View(am_riv3)
 #plotting the mean level from April through June 
 am_riv3%>% 
   ggplot()+
@@ -123,7 +124,7 @@ mean (mtcars_na$hp,na.rm=T)
 
 mtcars %>% 
   map_dbl(mean)
-
+#double
 #get back charactor
 mtcars %>% 
   map_chr(mean)
