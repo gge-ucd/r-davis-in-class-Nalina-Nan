@@ -1,0 +1,69 @@
+---
+title: "week9LiveCode"
+author: "Nalina"
+date: "3/5/2019"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+# delete all that
+
+This is an Rmarkdown document. I can type whatever I want.
+
+**this is bold**
+*this is italic*
+
+###This will make the font bigger
+
+##This will make the font smaller 
+
+Use setting button next to the Knit to set preview
+
+Command opt i -> short cut for code 
+
+```{r,warning=FALSE,message=FALSE,echo=TRUE}
+library(viridis)
+suppressPackageStartupMessages(library(tidyverse))
+library(ggplot2)
+glimpse(storms)
+ggplot(data=storms)+
+  geom_jitter(aes(x=as.factor(month),y=pressure, fill = wind), pch=21, alpha=.05)+
+  scale_fill_viridis_c()+
+  theme_bw()+
+  labs(title= "Hurricane", subtitle= "with Max Wind", x="month")
+  
+```
+Fill the point depending on wind speed
+
+Echo = False  not show the code
+CANT download package in Rmarkdown
+
+
+Writing out equations in Rmarkdown:
+
+If you want to write an equation, you put $ on either side of it.
+
+$\sum_{i=y}^n x_i$
+
+```{r}
+library(knitr)
+
+kable(head(storms), caption = "Table using kable")
+htmlTable::htmlTable(head(storms))
+
+library(DT)
+#make an interactive table
+DT::datatable(storms)
+```
+
+```{r}
+library(plotly)
+ggplotly(
+ggplot(data=storms)+
+  geom_jitter(aes(x=as.factor(month),y=pressure, fill = wind), pch=21, alpha=.05)+
+  scale_fill_viridis_c()+
+  theme_bw()+
+  labs(title= "Hurricane", subtitle= "with Max Wind", x="month")
+)
+```
+
