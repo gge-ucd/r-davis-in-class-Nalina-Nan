@@ -7,7 +7,9 @@ output: html_document
 
 I am a first year Ph.D. student in Animal Behavior Graduate Group. My reseach questions will play around **how human activity affects social behavior in long-tailed macaques** (*Macaca fascicularis*).
 
-I can't insert pics
+I also work with some rhesus macaques (*Macaca mulatta*)
+![A rhesus monkey stealing shoe](/Users/Nalina/Desktop/Programing/r-davis-in-class-Nalina-Nan/figures/ha_shoe.png)
+
 
 Use the storms data (included in RStudio) to create a plotly graph of the relationship between wind and pressure, where the status of the storm is indicated by a color.
 
